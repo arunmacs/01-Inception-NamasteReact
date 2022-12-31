@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container{
+            background-color: blueviolet;
+            font-weight: bold;
+        };
+
+        #title{
+            background-color:crimson !important;
+            font-weight: 500;
+            color: red !important;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="htmlRoot">
+        <h1 class="heading">Namaste React !</h1>
+    </div>
+    <div id="jsRoot">
+    </div>
+    <div id="reactRoot">
+    </div>
+    <script type="text/javascript">
+        const heading = document.createElement('h1');
+        heading.innerHTML = 'Namaste Javascript Man... of '
+        const spanEle = document.createElement('span');
+        spanEle.innerHTML='DOM...!'
+        heading.appendChild(spanEle)
+        const jsRoot = document.getElementById('jsRoot')
+        jsRoot.appendChild(heading)
+    </script>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script>
+        const h1Heading = React.createElement('h1',{id:'title'},'Welcome to Namaste React from Zero to Hero...!');
+        const para = React.createElement('p',{id:'para'},'Zero to Hero...! React course for all the types of learners over there');
+        const divContainer = React.createElement('div',{id:'container'}, [h1Heading,para]);
+        const reactRoot = ReactDOM.createRoot(document.getElementById('reactRoot'));
+        reactRoot.render(divContainer)
+    </script>
+</body>
+</html>
